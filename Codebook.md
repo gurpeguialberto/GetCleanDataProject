@@ -2,7 +2,7 @@
 #Getting and Cleaning Data. Course Project.  
 ##Codebook.md  
 
-**Author: gurpegui.alberto@gmail.com **
+**Author: gurpegui.alberto@gmail.com**
 
 Codebook explaining variables and summaries *run_analysis.R* script uses.
 See *README.md* file to get information about how that script works and the files and directories created by unziping requested file.   
@@ -23,7 +23,7 @@ X |(10299,561) |merge of both previous |`rbind(X_test, X_train)`
 
 Variable name |dimensions |Definition |Details (function/summary used to get it)    
 ------------------|-----------------|--------------------------------------|---------------  
-requestedFeatures |(66,2) |names of functions that contain *mean* or *std* |`features[grep("(mean|std)\\(", features[,2]),]`    
+requestedFeatures |(66,2) |names of functions that contain *mean* or *std* |`features[grep("(mean\|std)\\\\(", features[,2]),]`   
 mean_std |(10299,66) |subset from *X* which contain the previous names |`X[,requestedFeatures[,1]]`   
 
 3 Uses descriptive activity names to name the activities in the data set.   
