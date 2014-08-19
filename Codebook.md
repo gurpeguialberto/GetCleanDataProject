@@ -1,11 +1,11 @@
 
 #Getting and Cleaning Data. Course Project.  
-##Codebook
+##Codebook.md  
 
 **Author: gurpegui.alberto@gmail.com **
 
 Codebook explaining variables and summaries *run_analysis.R* script uses.
-See *README.md* file to explanations about how that script works and the files and directories created by unziping requested file.
+See *README.md* file to get information about how that script works and the files and directories created by unziping requested file.   
 Here you will find information about variables and any other relevant information.
 
 These are the 5 pieces in which the code of the script is divided:
