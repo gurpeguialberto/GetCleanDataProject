@@ -23,7 +23,7 @@ X |(10299,561) |merge of both previous |`rbind(X_test, X_train)`
 
 Variable name |dimensions |Definition |Details (function/summary used to get it)    
 ------------------|-----------------|--------------------------------------|---------------  
-requestedFeatures |(66,2) |names of functions that contain *mean* or *std* |`features[grep("(mean\|std)\\\\(", features[,2]),]`   
+requestedFeatures |(66,2) |names of functions that contain *mean* or *std* |`features[grep("(mean std)\\(", features[,2]),]` NOTE: grep(mean 'pipe' std)...  
 mean_std |(10299,66) |subset from *X* which contain the previous names |`X[,requestedFeatures[,1]]`   
 
 3 Uses descriptive activity names to name the activities in the data set.   
@@ -39,15 +39,15 @@ y (updated) |(10299,1) |changed codes by names |loop for
 
 Variable name |dimensions |Definition |Details (function/summary used to get it)    
 ------------------|-----------------|--------------------------------------|-------------   
-labels |(10299,562) |column with activity + *X*  |`bind(y, X)`
+labels |(10299,562) |column with activity + *X*  |`cbind(y, X)`
 mean_std_labels |(10299,67) |column with activity + *mean_std* |`cbind(y, mean_std)`
 
 5 Creates a second, independent tidy data set with the average of each variable.   
 
 Variable name |dimensions |Definition |Details (function/summary used to get it)    
 ------------------|-----------------|--------------------------------------|-------------    
-subject_test |(2947,1) |code for subjects |`read.table("./UCI HAR Dataset/test/subject_test.txt", col.names = c('subject'))`
-subject_train |(7352,1) |code for subjects |`rbind(subject_test, subject_train)`
+subject_test |(2947,1) |code for test subjects |`read.table("./UCI HAR Dataset/test/subject_test.txt", col.names = c('subject'))`
+subject_train |(7352,1) |code for train subjects |`rbind(subject_test, subject_train)`
 subject |(10299,1) |merge both previous |`read.table("./UCI HAR Dataset/train/subject_train.txt", col.names = c('subject'))`
 averages |(180,563) |final **tidy data** requested |`aggregate(X, by = list(activity = y[,1], subject = subject[,1]), mean)`
 
